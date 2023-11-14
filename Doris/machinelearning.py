@@ -1,3 +1,8 @@
+#traditional method
+
+#This code is based on traditional computer vision techniques using Local Binary Pattern (LBP) 
+#features and a Support Vector Machine (SVM) classifier.
+
 import cv2
 import numpy as np
 from skimage.feature import local_binary_pattern
