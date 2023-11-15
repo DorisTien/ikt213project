@@ -19,9 +19,64 @@ def preprocess_image(image_path):
 
 # Step 4: Data Collection and Labeling
 # Example image paths and corresponding labels
-image_paths = ['C:/Users/doris/Downloads/plastics/1.jpeg', 'C:/Users/doris/Downloads/plastics/2.png', 'C:/Users/doris/Downloads/plastics/n1.webp']  # Example image paths
-labels = [1, 1, 0]  # Labels: 1 for plastic images, 0 for non-plastic images
 
+image_paths = [#plastic online
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Plastic\\plastic334.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Plastic\\plastic336.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Plastic\\plastic339.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Plastic\\plastic341.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Plastic\\plastic343.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Plastic\\plastic350.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Plastic\\plastic370.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Plastic\\plastic371.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Plastic\\plastic372.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Plastic\\plastic373.jpg",
+    # NON PLASTIC ONLINE
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Non_Plastic\\00000013.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Non_Plastic\\00000015.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Non_Plastic\\00000022.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Non_Plastic\\00000026.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Non_Plastic\\00000030.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Non_Plastic\\00000031.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Non_Plastic\\00000039.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Non_Plastic\\00000043.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Non_Plastic\\00000045.jpg",
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\Non_Plastic\\00000068.jpg",
+    #my pic:plastic
+    "C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\plast\\20231115_153403.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\plast\\20231115_153426.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\plast\\20231115_153509.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\plast\\20231115_153525.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\plast\\20231115_153547.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\plast\\20231115_153812.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\plast\\20231115_153833.jpg",
+#my pic nonplstics
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\nonplastic\\20231114_184527.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\nonplastic\\20231115_153448.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\nonplastic\\20231115_153517.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\nonplastic\\20231115_153610.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\nonplastic\\20231115_153646.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\nonplastic\\20231115_153710.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\nonplastic\\20231115_153722.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\nonplastic\\20231115_153939.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\nonplastic\\20231115_153944.jpg",
+"C:\\Users\\doris\\Downloads\\Assets\\Training\\mypic\\nonplastic\\20231115_153950.jpg"
+
+]
+
+# Replace backslashes with forward slashes
+image_paths = [path.replace("\\", "/") for path in image_paths]
+
+
+
+
+labels = [1]*10
+for i in range(10):
+    labels.append(0)
+for i in range(7):
+    labels.append(1)
+for i in range(10):
+    labels.append(0)
 # Step 3, 5, 6: Feature Extraction and Model Training
 X = [preprocess_image(img_path) for img_path in image_paths]
 y = np.array(labels)
