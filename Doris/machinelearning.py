@@ -100,3 +100,10 @@ if predicted_label == 1:
     print("The image contains plastic.")
 else:
     print("The image does not contain plastic.")
+
+
+from PIL import Image
+image = Image.open(new_image_path)
+
+# Display the image
+image.show()

@@ -146,7 +146,7 @@ print("Accuracy:", accuracy_score(y_true, y_pred))
 
 # Step 8: Deployment
 # Use the trained model to predict new images
-new_image_path = 'C:/Users/doris/Downloads/Quick Share/20230914_204857.jpg'
+new_image_path = 'C:/Users/doris/Downloads/Assets/Training/mypic/plast/20231115_153833.jpg'
 new_img = preprocess_image(new_image_path)
 new_img = np.expand_dims(new_img, axis=0)
 new_img = new_img / 255.0

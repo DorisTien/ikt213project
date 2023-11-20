@@ -1,6 +1,7 @@
 import numpy as np
 from keras.preprocessing import image
 from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
+from PIL import Image
 
 # Load the pre-trained VGG16 model
 model = VGG16(weights='imagenet')
@@ -20,7 +21,11 @@ def recognize_plastic(image_path):
         print(f"{label} ({score:.2f})")
 
 # Path to your image
-image_path = "C:/Users/doris/Downloads/Quick Share/20231013_185513.jpg" # Change this to the path of your image
+image_path = "C:/Users/doris/Downloads/Assets/Training/mypic/plast/20231115_153509.jpg" # Change this to the path of your image
 
-# Call the function with the image path
 recognize_plastic(image_path)
+
+image = Image.open(image_path)
+
+# Display the image
+image.show()

@@ -117,7 +117,7 @@ print("Accuracy:", accuracy_score(y_true, y_pred))
 
 # Step 8: Deployment
 # Use the trained model to predict new images
-new_image_path = 'C:/Users/doris/Downloads/plastics/3.jpeg'
+new_image_path = 'C:/Users/doris/Downloads/Assets/Training/mypic/plast/20231115_153833.jpg'
 new_img = preprocess_image(new_image_path)
 new_img = np.expand_dims(new_img, axis=0)
 new_img = new_img / 255.0
@@ -127,3 +127,8 @@ if predicted_label == 1:
     print("The image contains plastic.")
 else:
     print("The image does not contain plastic.")
+from PIL import Image
+image = Image.open(new_image_path)
+
+# Display the image
+image.show()
